@@ -30,7 +30,7 @@ public class Ejercicio12 {
         year = teclado.nextInt();
         
         if (dia < 1 || dia > 31 || mes < 1 || mes > 12) {
-            System.out.println("Datos no v�lidos");
+            System.out.println("Datos no validos");
         }
         else {
             if (year %4 == 0 && year % 100 != 0 || year % 400 == 0) {
