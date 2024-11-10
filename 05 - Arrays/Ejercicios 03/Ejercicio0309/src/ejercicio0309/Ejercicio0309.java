@@ -25,8 +25,6 @@ public class Ejercicio0309 {
         matriz = generarMatriz(filas, columnas);
         mostrarMatriz(matriz);
 
-        
-
         // matriz Nula
         // a)
         boolean es = esNula(matriz);
@@ -106,6 +104,15 @@ public class Ejercicio0309 {
         aux = opuesta(matriz);
         System.out.println("Matriz Opuesta:");
         mostrarMatriz(aux);
+
+        if (matriz.length == 1 || matriz[0].length == 1) {
+            System.out.println("Submatriz911 nula");
+        } else {
+            aux = submatriz911(matriz, 1, 1);
+            System.out.println("Submatriz911:");
+            mostrarMatriz(aux);
+        }
+
     }
 
 // ***************  Métodos  ***************************************************
@@ -318,4 +325,27 @@ public class Ejercicio0309 {
         }
         return aux;
     }
+
+    // 9.11
+    // Dada la matriz y y dos índices de fila y columna i y j, construya una nueva matriz representando 
+    // la submatriz de la inicial que se obtiene eliminando la fila i y la columna j.
+    public static int[][] submatriz911(int[][] matriz, int fila, int columna) {
+        int[][] aux = new int[matriz.length - 1][matriz[0].length - 1];
+        int f = 0, c = 0;
+        mostrarMatriz(matriz);
+        for (int i = 0; i < matriz.length; i++) {
+            c = 0;
+            if (i != fila) {
+                for (int j = 0; j < matriz[0].length; j++) {
+                    if (j != columna) {
+                        aux[f][c] = matriz[i][j];
+                        c++;
+                    }
+                }
+                f++;
+            }
+        }
+        return aux;
+    }
+
 }
