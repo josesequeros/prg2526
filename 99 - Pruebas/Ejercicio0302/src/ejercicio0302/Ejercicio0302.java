@@ -50,6 +50,16 @@ public class Ejercicio0302 {
             System.out.println("Los vectores NO son proporcionales");
         }
 
+        boolean menor = true;
+        for (int i = 0; i < vectorA.length; i++) {
+            menor = menor && vectorA[i] <= vectorB[i];
+        }
+        if (menor) {
+            System.out.println("El vector A es menor que el vector B");
+        } else {
+            System.out.println("A no es menor que B");
+        }
+
         int cont = 1;
         while (!proporcionales) {
             for (int i = 0; i < elementos; i++) {
