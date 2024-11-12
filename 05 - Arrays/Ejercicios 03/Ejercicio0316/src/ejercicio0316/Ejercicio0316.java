@@ -38,7 +38,6 @@ public class Ejercicio0316 {
         }
         // obtenemos columna con suma mínima
         int sumaMinima = Integer.MAX_VALUE;
-        int sumaMaxima = 0;
         int posicion = 0;
         for (int fila = 0; fila < matriz.length; fila++) {
             int suma = 0;
