@@ -4,6 +4,8 @@
  */
 package ejercicio0316;
 
+import java.util.Arrays;
+
 /**
  *
  * @author jabue
@@ -54,6 +56,9 @@ public class Ejercicio0316 {
         for (int i = 0; i < matriz[0].length; i++) {
             System.out.printf("%3d", matriz[posicion][i]);
         }
+        System.out.println("");
+        int arraySumaMinima[] = matriz[posicion];
+        System.out.println(Arrays.toString(arraySumaMinima));
         System.out.println("");
     }
 
