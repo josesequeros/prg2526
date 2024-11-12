@@ -97,14 +97,15 @@ public class Ejercicio0309 {
         }
 
         int[][] aux;
-        aux = traspuesta(matriz);
         System.out.println("Matriz Traspuesta:");
+        aux = traspuesta(matriz);
         mostrarMatriz(aux);
 
-        aux = opuesta(matriz);
         System.out.println("Matriz Opuesta:");
+        aux = opuesta(matriz);
         mostrarMatriz(aux);
 
+        // Ejercicio 9.11
         if (matriz.length == 1 || matriz[0].length == 1) {
             System.out.println("Submatriz911 nula");
         } else {
@@ -113,6 +114,21 @@ public class Ejercicio0309 {
             mostrarMatriz(aux);
         }
 
+        // Ejercicio 9.12
+        int[] vector;
+        vector = arraySumaFila(matriz);
+        System.out.println("Vector suma fila:");
+        mostrarArray(vector);
+
+        // Ejercicio 9.13
+        //int[] vector;
+        vector = arraySumaColumna(matriz);
+        System.out.println("Vector suma columna:");
+        mostrarArray(vector);
+
+        System.out.println("Matriz por escalar:");
+        aux = matrizPorEscalar(matriz,5);
+        mostrarMatriz(aux);
     }
 
 // ***************  Métodos  ***************************************************
@@ -145,6 +161,15 @@ public class Ejercicio0309 {
             }
             System.out.println("");
         }
+    }
+
+// Método que visualiza el array
+    public static void mostrarArray(int[] matriz) {
+        System.out.println("array: ");
+        for (int fila = 0; fila < matriz.length; fila++) {
+            System.out.printf("%3d", matriz[fila]);
+        }
+        System.out.println("");
     }
 
     // es nula
@@ -343,6 +368,56 @@ public class Ejercicio0309 {
                     }
                 }
                 f++;
+            }
+        }
+        return aux;
+    }
+
+    // 9.12
+    // Devolver un array cuyos elementos son la suma de las filas de la matriz inicial.  
+    // (Elemento i es la suma de la fila i)
+    public static int[] arraySumaFila(int[][] matriz) {
+        int[] aux = new int[matriz.length];
+        int f = 0, c = 0;
+        //mostrarMatriz(matriz);
+        int suma = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            suma = 0;
+            for (int j = 0; j < matriz[0].length; j++) {
+                suma += matriz[i][j];
+            }
+            aux[i] = suma;
+        }
+        return aux;
+    }
+
+    // 9.13
+    // Devolver un array cuyos elementos son la suma de las columnas de la matriz inicial.  
+    // (Elemento i es la suma de la columna i)
+    public static int[] arraySumaColumna(int[][] matriz) {
+        int[] aux = new int[matriz[0].length];
+        int f = 0, c = 0;
+        //mostrarMatriz(matriz);
+        int suma = 0;
+        for (int columna = 0; columna < matriz[0].length; columna++) {
+            suma = 0;
+            for (int fila = 0; fila < matriz.length; fila++) {
+                suma += matriz[fila][columna];
+            }
+            aux[columna] = suma;
+        }
+        return aux;
+    }
+
+    // 9.14
+    // Devolver el producto de una matriz por un escalar
+    // 
+    public static int[][] matrizPorEscalar(int[][] matriz, int r) {
+        int[][] aux = new int[matriz.length][matriz[0].length];
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
+                aux[i][j] = matriz[i][j] * r;
             }
         }
         return aux;
