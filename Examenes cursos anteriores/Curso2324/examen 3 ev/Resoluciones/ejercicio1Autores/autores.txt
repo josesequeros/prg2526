@@ -1,0 +1,2 @@
+12345678Z,nombre,apellidos,2001-01-01,cotrina.jpg
+74187627T,jose,anotnio,2003-02-01,imagen

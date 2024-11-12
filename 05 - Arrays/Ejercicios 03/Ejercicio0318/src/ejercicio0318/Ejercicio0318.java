@@ -1,0 +1,54 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package ejercicio0318;
+
+/**
+ *
+ * @author jabue
+ */
+public class Ejercicio0318 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int filas = 2;
+        int columnas = 3;
+        int dimension = 10;
+        filas = (int) (Math.random() * dimension + 1) - 0;
+        columnas = (int) (Math.random() * dimension + 1) - 0;
+        int[][] matriz = new int[filas][columnas];
+        for (int fila = 0; fila < filas; fila++) {
+            for (int columna = 0; columna < columnas; columna++) {
+                //matriz[i][j] = (int) (Math.random() * 21) - 10;   //  entre -10 y 10
+                matriz[fila][columna] = (int) (Math.random() * dimension) - 0;
+            }
+        }
+        int traspuesta[][] = new int[matriz[0].length][matriz.length];
+        for (int fila = 0; fila < filas; fila++) {
+            for (int columna = 0; columna < columnas; columna++) {
+                //matriz[i][j] = (int) (Math.random() * 21) - 10;   //  entre -10 y 10
+                traspuesta[columna][fila] = matriz[fila][columna];
+            }
+        }
+        System.out.println("matriz: ");
+        mostrarMatriz(matriz);
+        System.out.println("");
+        System.out.println("matriz traspuesta: ");
+        mostrarMatriz(traspuesta);
+    }
+
+    // Método que visualiza la matriz
+    public static void mostrarMatriz(int[][] matriz) {
+        for (int fila = 0; fila < matriz.length; fila++) {
+            for (int columna = 0; columna < matriz[0].length; columna++) {
+                System.out.printf("%3d", matriz[fila][columna]);
+            }
+            System.out.println("");
+        }
+    }
+
+}

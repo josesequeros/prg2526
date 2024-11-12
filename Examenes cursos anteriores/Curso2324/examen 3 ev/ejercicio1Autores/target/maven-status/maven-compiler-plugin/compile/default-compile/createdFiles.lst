@@ -1,0 +1,6 @@
+com\sequeros\autoreslibros\App.class
+module-info.class
+com\sequeros\autoreslibros\DatosAutorController.class
+com\sequeros\autoreslibros\Autor.class
+com\sequeros\autoreslibros\AutoresController.class
+com\sequeros\autoreslibros\Auxiliar.class

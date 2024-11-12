@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sequeros.ejercicio2menufiguras.MenuFigurasController">
+   <center>
+      <StackPane prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <Circle fx:id="circulo" fill="DODGERBLUE" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+            <Ellipse fx:id="elipse" fill="DODGERBLUE" radiusX="100.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle fx:id="cuadrado" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="200.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+         </children>
+      </StackPane>
+   </center>
+   <top>
+      <VBox prefHeight="50.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+               <menus>
+                  <Menu mnemonicParsing="false" text="Archivo">
+                     <items>
+                        <MenuItem fx:id="exit" mnemonicParsing="false" text="Salir" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Dibujar">
+                     <items>
+                        <MenuItem fx:id="miCuadrado" mnemonicParsing="false" text="Cuadrado" />
+                        <MenuItem fx:id="miElipse" mnemonicParsing="false" text="Elipse" />
+                        <MenuItem fx:id="miCirculo" mnemonicParsing="false" text="Círculo" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+               <items>
+                  <Button fx:id="botonCuadrado" mnemonicParsing="false">
+                     <graphic>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="botonElipse" mnemonicParsing="false">
+                     <graphic>
+                        <Ellipse fill="DODGERBLUE" radiusX="15.0" radiusY="10.0" stroke="BLACK" strokeType="INSIDE" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="botonCirculo" mnemonicParsing="false">
+                     <graphic>
+                        <Circle fill="DODGERBLUE" radius="15.0" stroke="BLACK" strokeType="INSIDE" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="botonSalir" mnemonicParsing="false" prefHeight="30.0" prefWidth="40.0" text="Salir" />
+               </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
