@@ -34,7 +34,7 @@ public class Ejercicio0318 {
                 traspuesta[columna][fila] = matriz[fila][columna];
             }
         }
-        System.out.println("matriz: ");
+        System.out.println("matriz original: ");
         mostrarMatriz(matriz);
         System.out.println("");
         System.out.println("matriz traspuesta: ");
