@@ -51,6 +51,13 @@ public class CrecidasNilo {
             {0, 3, 3, 9, 0},
             {3, 7, 8, 9, 3}
         };
+        terreno = new int[][]{
+            {2, 1, 2, 4, 2},
+            {6, 6, 6, 6, 6},
+            {2, 1, 2, 4, 6},
+            {0, 3, 3, 9, 0},
+            {3, 7, 8, 9, 3}
+        };
         //terreno = terreno2;
 
         int puntoEntrada = (filas - 1) / 2;
@@ -67,13 +74,13 @@ public class CrecidasNilo {
             } else {
                 for (int[] row : terrenoInundado) {
                     Arrays.fill(row, NOINUNDADO);
-                    camino=0;
+                    camino = 0;
                 }
             }
         }
         System.out.println("Altura de la Crecida: " + altura);
         System.out.println("Parcelas Inundadas: " + inundadas);
-        
+
         System.out.println("Camino recorrido por el agua: ");
         visualizarTerreno(terrenoInundado);
     }
