@@ -19,7 +19,7 @@ public class Agenda {
         this.contactos = new ArrayList();
     }
 
-    private int posicionContacto(String nombre) {
+    public int posicionContacto(String nombre) {
         int posicion = -1;
 
         for (int i = 0; i < this.contactos.size(); i++) {
@@ -31,7 +31,7 @@ public class Agenda {
         return posicion;
     }
 
-    private boolean existeContacto(String nombre) {
+    public boolean existeContacto(String nombre) {
         return posicionContacto(nombre) >= 0;
         /*
         Contacto contact;
@@ -42,7 +42,7 @@ public class Agenda {
             }
         }
         return existe;
-         */
+        */
     }
 
     public Contacto buscarContacto(String nombre) {
@@ -61,32 +61,13 @@ public class Agenda {
             }
         }
         return contacto;
-         */
+        */
     }
 
-    public boolean addContacto(Contacto c) {
+    public boolean addContactos(Contacto c) {
         boolean ok = false;
         if (!existeContacto(c.getNombre())) {
             this.contactos.add(c);
-            ok = true;
-        }
-        return ok;
-    }
-
-    public boolean eliminarContacto(Contacto c) {
-        boolean ok = false;
-        if (existeContacto(c.getNombre())) {
-            this.contactos.remove(c);
-            ok = true;
-        }
-        return ok;
-    }
-
-    public boolean eliminarContacto(String nombre) {
-        boolean ok = false;
-        int p;
-        if ((p = posicionContacto(nombre)) >= 0) {
-            this.contactos.remove(p);
             ok = true;
         }
         return ok;

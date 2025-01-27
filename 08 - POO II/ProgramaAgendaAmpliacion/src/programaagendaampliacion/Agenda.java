@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package programaagenda;
+package programaagendaampliacion;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -19,7 +19,7 @@ public class Agenda {
         this.contactos = new ArrayList();
     }
 
-    private int posicionContacto(String nombre) {
+    public int posicionContacto(String nombre) {
         int posicion = -1;
 
         for (int i = 0; i < this.contactos.size(); i++) {
@@ -31,18 +31,8 @@ public class Agenda {
         return posicion;
     }
 
-    private boolean existeContacto(String nombre) {
+    public boolean existeContacto(String nombre) {
         return posicionContacto(nombre) >= 0;
-        /*
-        Contacto contact;
-        for (int i = 0; i < this.contactos.size(); i++) {
-            contact = (Contacto) this.contactos.get(i);
-            if (contact.getNombre().equals(nombre)) {
-                existe = true;
-            }
-        }
-        return existe;
-         */
     }
 
     public Contacto buscarContacto(String nombre) {
@@ -53,18 +43,10 @@ public class Agenda {
             contacto = (Contacto) this.contactos.get(i);
         }
         return contacto;
-        /*
-        for (int i = 0; i < this.contactos.size(); i++) {
-            if (((Contacto) this.contactos.get(i)).getNombre().equals(nombre)) {
-                contacto = (Contacto) this.contactos.get(i);
-                break;
-            }
-        }
-        return contacto;
-         */
+        
     }
 
-    public boolean addContacto(Contacto c) {
+    public boolean addContactos(Contacto c) {
         boolean ok = false;
         if (!existeContacto(c.getNombre())) {
             this.contactos.add(c);
@@ -72,24 +54,17 @@ public class Agenda {
         }
         return ok;
     }
-
-    public boolean eliminarContacto(Contacto c) {
-        boolean ok = false;
-        if (existeContacto(c.getNombre())) {
-            this.contactos.remove(c);
-            ok = true;
+    
+    public boolean borrarContactos(String nombre) {
+        Contacto contacto = null;
+        Boolean borrado = false;
+        int i = posicionContacto(nombre);
+        if (i >= 0) {
+            contacto = (Contacto) this.contactos.remove(i);
+            borrado = true;
         }
-        return ok;
-    }
-
-    public boolean eliminarContacto(String nombre) {
-        boolean ok = false;
-        int p;
-        if ((p = posicionContacto(nombre)) >= 0) {
-            this.contactos.remove(p);
-            ok = true;
-        }
-        return ok;
+        
+        return borrado;
     }
 
     public void listarContactos() {
@@ -100,11 +75,6 @@ public class Agenda {
             System.out.println(iter.next()); // Lo imprimimos por pantalla
         }
         System.out.println("");
-        /*
-        for (int i = 0; i < contactos.size(); i++) {
-            System.out.println(contactos.get(i)); // Lo imprimimos por pantalla
-        }
-         */
     }
 
 }

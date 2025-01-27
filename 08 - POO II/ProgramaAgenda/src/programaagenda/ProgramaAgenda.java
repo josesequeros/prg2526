@@ -27,14 +27,14 @@ public class ProgramaAgenda {
         Contacto contacto;
 
         Contacto c = new Contacto("jose", "1234");
-        agendaContactos.addContacto(c);
+        agendaContactos.addContactos(c);
         Contacto c2 = new Contacto("pepe", "2345");
-        agendaContactos.addContacto(c2);
+        agendaContactos.addContactos(c2);
         Contacto c3 = new Contacto("ana", "3333");
-        agendaContactos.addContacto(c3);
+        agendaContactos.addContactos(c3);
         Contacto c4 = new Contacto("luis", "4321");
-        agendaContactos.addContacto(c4);
-
+        agendaContactos.addContactos(c4);
+        
         do {
             System.out.println("Elija una opción");
             System.out.println("1. Añadir Contacto");
@@ -48,25 +48,13 @@ public class ProgramaAgenda {
             switch (opcion) {
                 case 1 -> {
                     contacto = pedirDatosContacto();
-                    if (!agendaContactos.addContacto(contacto)) {
+                    if (!agendaContactos.addContactos(contacto)) {
                         //if (agendaContactos.existeContacto(contacto)) {
                         System.out.println("El contacto ya existe");
-                    }
+                    } 
                     System.out.println("");
                 }
                 case 2 -> {
-                    String nombre = pedirNombreContacto();
-                    if (agendaContactos.eliminarContacto(nombre)) {
-                        System.out.println("Eliminado el contacto con nombre: " + nombre);
-                    }
-                    /*
-                    contacto = agendaContactos.buscarContacto(nombre);
-                    if (contacto != null) {
-                        agendaContactos.eliminarContacto(contacto);
-                    } else {
-                        System.out.println("No existe el contacto con nombre: " + nombre);
-                    }
-*/
                 }
                 case 3 -> {
                     System.out.println("");
@@ -78,12 +66,9 @@ public class ProgramaAgenda {
                     System.out.println(contacto);
                     System.out.println("");
                 }
-                case 4 ->
-                    agendaContactos.listarContactos();
-                case 5 ->
-                    System.out.println("GRACIAS POR USAR NUESTRA APLICACION");
-                default ->
-                    System.out.println("Opción elegida incorrecta.");
+                case 4 -> agendaContactos.listarContactos();
+                case 5 -> System.out.println("GRACIAS POR USAR NUESTRA APLICACION");
+                default -> System.out.println("Opción elegida incorrecta.");
             }
         } while (opcion != 5);
     }
@@ -99,17 +84,6 @@ public class ProgramaAgenda {
         contacto = new Contacto(nombre, telefono);
 
         return contacto;
-    }
-
-    public static String pedirNombreContacto() {
-        Scanner sc = new Scanner(System.in);
-        Contacto contacto;
-
-        System.out.print("Introduzca Nombre del Contacto: ");
-        String nombre = sc.nextLine();
-
-        //contacto = new Contacto(nombre, telefono);
-        return nombre;
     }
 
 }
