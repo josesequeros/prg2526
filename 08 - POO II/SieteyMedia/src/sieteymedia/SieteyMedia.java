@@ -23,6 +23,10 @@ public class SieteyMedia {
             baraja.barajar();
         }
         System.out.println(baraja);
+        
+        for (Palos palo : Palos.values()) {
+            System.out.println(palo.name());
+        }
     }
 
 }

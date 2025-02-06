@@ -11,20 +11,20 @@ package sieteymedia;
 public class Carta {
 
     private Palos palo;
-    private int numero;
-    private float valor;
+    private String nombre;
+    private double valor;
     private String imagen;
 
     public Carta() {
         this.palo = null;
-        this.numero = 0;
+        this.nombre = "";
         this.valor = 0;
         this.imagen = "";
     }
 
-    public Carta(Palos palo, int numero, float valor, String imagen) {
+    public Carta(Palos palo, String nombre, double valor, String imagen) {
         this.palo = palo;
-        this.numero = numero;
+        this.nombre = nombre;
         this.valor = valor;
         this.imagen = imagen;
     }
@@ -44,30 +44,16 @@ public class Carta {
     }
 
     /**
-     * @return the numero
-     */
-    public int getNumero() {
-        return numero;
-    }
-
-    /**
-     * @param numero the numero to set
-     */
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    /**
      * @return the valor
      */
-    public float getValor() {
+    public double getValor() {
         return valor;
     }
 
     /**
      * @param valor the valor to set
      */
-    public void setValor(float valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 
@@ -90,6 +76,19 @@ public class Carta {
         //return "Carta{" + "palo=" + palo.name() + ", numero=" + numero + ", valor=" + valor + ", imagen=" + imagen + '}';
         return imagen;
     }
-    
-    
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 }

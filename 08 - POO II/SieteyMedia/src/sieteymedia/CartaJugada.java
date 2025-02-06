@@ -16,8 +16,26 @@ public class CartaJugada extends Carta {
         this.oculta = oculta;
     }
 
-    public CartaJugada(boolean oculta, Palos palo, int numero, float valor, String imagen) {
-        super(palo, numero, valor, imagen);
+    /**
+     * 
+     * @param oculta
+     * @param palo
+     * @param numero
+     * @param valor
+     * @param imagen
+     */
+    public CartaJugada(boolean oculta, Palos palo, String nombre, double valor, String imagen) {
+        super(palo, nombre, valor, imagen);
+        this.oculta = oculta;
+    }
+
+    /**
+     *
+     * @param carta
+     * @param oculta
+     */
+    public CartaJugada(Carta carta, boolean oculta) {
+        super(carta.getPalo(), carta.getNombre(), carta.getValor(), carta.getImagen());
         this.oculta = oculta;
     }
 
@@ -44,5 +62,4 @@ public class CartaJugada extends Carta {
         this.oculta = oculta;
     }
 
-    
 }
