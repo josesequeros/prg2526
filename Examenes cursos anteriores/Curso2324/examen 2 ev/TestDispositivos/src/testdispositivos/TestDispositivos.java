@@ -23,12 +23,16 @@ public class TestDispositivos {
         dispositivos[4] = new PCSobremesa("Linux", "usuario4", "pass4", "servidor", "ibm", "modelo4", 2004);
         dispositivos[5] = new PCSobremesa("Widnows 10", "usuario5", "pass5", "cliente", "hp", "modelo5", 2005);
         for (DispositivoElectronico dispositivo : dispositivos) {
+            System.out.println(" ---- Encendiendo el dispositivo: ----");
             dispositivo.powerOn();
-            System.out.println(dispositivo);
+            //System.out.println(dispositivo);
             dispositivo.mostrarInformacion();
+            System.out.println("");
+            System.out.println("Apagando el dispositivo");
             dispositivo.powerOff();
-            System.out.println(dispositivo);
+            //System.out.println(dispositivo);
             dispositivo.mostrarInformacion();
+            System.out.println("");
         }
     }
     

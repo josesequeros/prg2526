@@ -21,10 +21,15 @@ public class TestFiguras {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        JFrame frame = new JFrame("Triángulo Gráfico");
+        JFrame frame = new JFrame("Panel de Figuras");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 600);
         ArrayList<Figura> figuras = new ArrayList<>();
+       /*
+        PanelFiguras pf = new PanelFiguras(figuras);
+        frame.add(pf);
+        frame.setVisible(true);
+        */
 
         ArrayList<Coordenada> coordenadasCuadrado = new ArrayList<>();
         coordenadasCuadrado.add(new Coordenada(100, 100));
@@ -85,9 +90,11 @@ public class TestFiguras {
         figuras.add(nuevoCuadrado("Cuadrado nuevo", "rojo", 100, 300, 300));
         //triangulo2.rotar(-90);
 
+        
         PanelFiguras pf = new PanelFiguras(figuras);
         frame.add(pf);
         frame.setVisible(true);
+        
         //cuadrado.redimensionarMismoCentro(2.0);
         //cuadrado.mostrarDetalles();
         //cuadrado.rotar(45.0);
@@ -96,20 +103,28 @@ public class TestFiguras {
         //cuadrado.dibujar();
 
         //frame.setVisible(true);
+        System.out.println("Pentagono0");
+        ArrayList<Coordenada> coordenadasPentagono0 = obtenerCoordenadasPentagono(200, 400, 100);
+        Pentagono pentagono0 = new Pentagono("Pentagono 0", 100, "verde", coordenadasPentagono0);
+        //pentagono0.rotar(0);        
+        figuras.add(pentagono0);        
+        
+        System.out.println("Pentagono1");        
         ArrayList<Coordenada> coordenadasPentagono1 = obtenerCoordenadasPentagono(200, 400, 100);
-        System.out.println("Pentagono1");
         Pentagono pentagono1 = new Pentagono("Pentagono 1", 100, "azul", coordenadasPentagono1);
-        pentagono1.rotar(60);
+        pentagono1.rotar(30);
         figuras.add(pentagono1);
 
+        System.out.println("Pentagono2");
         ArrayList<Coordenada> coordenadasPentagono2 = obtenerCoordenadasPentagono(200, 400, 100);
         Pentagono pentagono2 = new Pentagono("Pentagono 2", 100, "rojo", coordenadasPentagono2);
-        pentagono2.rotar(30);
+        pentagono2.rotar(60);
         figuras.add(pentagono2);
 
-        coordenadasPentagono1 = new ArrayList<>();
+        System.out.println("Pentagono3");
         ArrayList<Coordenada> coordenadasPentagono3 = obtenerCoordenadasPentagono(200, 400, 100);
         Pentagono pentagono3 = new Pentagono("Pentagono 3", 100, "negro", coordenadasPentagono3);
+        pentagono3.rotar(90);        
         figuras.add(pentagono3);
 
         triangulo.mostrarCoordenadas();

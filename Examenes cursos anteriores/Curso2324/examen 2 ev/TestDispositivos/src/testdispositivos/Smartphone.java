@@ -22,6 +22,7 @@ public class Smartphone extends DispositivoElectronico implements DispositivoMov
     }
 
     public void llamar(int numero) {
+        this.bateria = Math.max(0, this.bateria - 15);
         System.out.println("El smartphone con numero: " + this.numero + " esta llamando al numero " + numero);
     }
     
@@ -53,12 +54,18 @@ public class Smartphone extends DispositivoElectronico implements DispositivoMov
 
     @Override
     public void recargar(int porcentaje) {
-        this.bateria = Math.max(100, this.bateria + porcentaje);
+        this.bateria = Math.min(100, this.bateria + porcentaje);
     }
 
     @Override
     public String toString() {
         return super.toString() + " Smartphone{" + "numero=" + numero + ", pantalla=" + pantalla + ", bateria=" + bateria + '}';
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        super.mostrarInformacion();
+        System.out.println(" Smartphone{" + "numero=" + numero + ", pantalla=" + pantalla + ", bateria=" + bateria + '}');
     }
 
 }

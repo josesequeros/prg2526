@@ -4,35 +4,40 @@
  */
 package pruebas;
 
-import java.util.Stack;
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
  * @author IEUser
  */
-public class Pruebas {
+public class Pruebas extends JPanel {
 
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        int tamaño = 100; // Tamaño del cuadrado en píxeles
+        int x = 50, y = 50; // Posición inicial
+
+        g.setColor(Color.BLUE); // Color del cuadrado
+        g.drawRect(x, y, tamaño, tamaño); // Dibuja el contorno del cuadrado
+        g.fillRect(x, y, tamaño, tamaño); // Rellena el cuadrado
+        g.setColor(Color.RED); // Color del cuadrado
+        g.drawOval(x, y, 50, 50);
+    }
+    
     public static void main(String[] args) {
         // Default initialization of Stack
-        Stack stack1 = new Stack();
-        // Initialization of Stack
-        // using Generics
-        Stack<String> stack2 = new Stack<String>();
-        // pushing the elements
-        stack1.push("WelCome");
-        stack1.push("To");
-        stack1.push("Stacks");
-        stack2.push("Bienvenido");
-        stack2.push("a");
-        stack2.push("Pilas");
-        Pila<String> pila1 = new Pila<>();
-        Pila<Integer> pila2 = new Pila<>();
-        pila1.apilar("Primer elemento");
-        pila2.apilar(1);
-        // Printing the Stack Elements
-        System.out.println(stack1);
-        System.out.println(stack2);
-        System.out.println(pila1);
-        System.out.println(pila2);
+        // frame ventana
+        JFrame frame = new JFrame("Triángulo Gráfico");
+        Pruebas panel = new Pruebas();
+        
+        
+        frame.add(panel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(600, 600);
+        frame.setVisible(true);
     }
 }

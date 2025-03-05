@@ -12,6 +12,7 @@ public class Carta {
 
     private Palos palo;
     private String nombre;
+    //private NombreCarta nombreCarta;
     private double valor;
     private String imagen;
 

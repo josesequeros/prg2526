@@ -20,7 +20,7 @@ public class CartaJugada extends Carta {
      * 
      * @param oculta
      * @param palo
-     * @param numero
+     * @param nombre
      * @param valor
      * @param imagen
      */
