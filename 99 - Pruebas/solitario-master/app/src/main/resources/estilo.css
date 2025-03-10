@@ -1,0 +1,24 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 16 may 2024, 14:15:45
+    Author     : pedro
+*/
+.carta{
+       -fx-shape: "m 0,15.984 5.672,5.664 c 0,0 3.182,-3.18 6.314,-6.312 V 32 h 8.021 V 15.336 l 6.32,6.32 L 32,15.984 16.002,0 Z";
+   -fx-pref-width: 1.333em;
+   -fx-pref-height: 1.333em;
+   -fx-background-color: red;
+}
+.root {
+    -fx-background-color: #f0f0f0;
+}
+.monton{
+   
+    -fx-bacground-color: #006655;
+}
+.vbox{
+    
+}
