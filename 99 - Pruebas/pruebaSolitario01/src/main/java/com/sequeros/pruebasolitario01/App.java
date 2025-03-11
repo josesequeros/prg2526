@@ -84,7 +84,7 @@ public class App extends Application {
                 break;
             }
         }
-        return draggedIndex != -1 && draggedIndex + 1 == targetIndex; // Solo permite soltar en la siguiente carta
+        return draggedIndex != -1 && draggedIndex - 1 == targetIndex; // Solo permite soltar en la siguiente carta
     }
 
     public static void main(String[] args) {
