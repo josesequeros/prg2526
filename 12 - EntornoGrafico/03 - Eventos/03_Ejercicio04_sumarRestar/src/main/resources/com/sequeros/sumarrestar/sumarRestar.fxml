@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sequeros.sumarrestar.SumarRestarController">
+   <children>
+      <Label fx:id="resultado" text="0,00">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="25.0" top="30.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="79.0" prefWidth="400.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#pulsarBotonNumerico" prefHeight="30.0" prefWidth="30.0" text="1">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#pulsarBotonNumerico" prefHeight="30.0" prefWidth="30.0" text="5">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#pulsarBotonNumerico" prefHeight="30.0" prefWidth="30.0" text="10">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <CheckBox fx:id="cbResta" mnemonicParsing="false" onAction="#checkboxRestaPulsar" text="Restar" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Valor:">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Text>
+            <TextField fx:id="textValor" prefHeight="25.0" prefWidth="172.0">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </TextField>
+            <Button fx:id="botonSuma" mnemonicParsing="false" onAction="#sumarBoton" text="Suma" />
+         </children>
+      </HBox>
+      <Text fx:id="mensajeResta" fill="#8a8282" strokeType="OUTSIDE" strokeWidth="0.0" text="¡Estás restando!" translateX="140.0" translateY="130.0" />
+   </children>
+</VBox>

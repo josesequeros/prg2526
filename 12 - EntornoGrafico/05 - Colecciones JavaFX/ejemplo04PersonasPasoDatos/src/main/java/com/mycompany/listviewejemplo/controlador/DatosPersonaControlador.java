@@ -1,0 +1,70 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
+package com.mycompany.listviewejemplo.controlador;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+
+import com.mycompany.listviewejemplo.modelo.Persona;
+import javafx.stage.Stage;
+
+/**
+ * FXML Controller class
+ *
+ * @author IEUser
+ */
+public class DatosPersonaControlador implements Initializable {
+
+    @FXML
+    private TextField textFieldNombrefxID;
+    @FXML
+    private TextField textFieldApellidofxID;
+    @FXML
+    private Button BSalvarfxID;
+    @FXML
+    private Button BCancelarfxID;
+
+    private boolean pulsadoCancelar = true; // evitar el error al salir por la X
+    private Persona personaModificada;
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }
+
+    @FXML
+    private void salvarPulsado(ActionEvent event) {
+        pulsadoCancelar = false;
+        personaModificada = new Persona(textFieldNombrefxID.getText(), textFieldApellidofxID.getText());
+        ((Button) event.getSource()).getScene().getWindow().hide();
+    }
+
+    @FXML
+    private void cancelarPulsado(ActionEvent event) {
+        pulsadoCancelar = true;
+        ((Button) event.getSource()).getScene().getWindow().hide();
+    }
+
+    public void initPersona(Persona p) {
+        textFieldNombrefxID.setText(p.getNombre());
+        textFieldApellidofxID.setText(p.getApellidos());
+    }
+
+    public boolean getCancelar() {
+        return pulsadoCancelar;
+    }
+
+    public Persona getPersona() {
+        return personaModificada;
+    }
+}

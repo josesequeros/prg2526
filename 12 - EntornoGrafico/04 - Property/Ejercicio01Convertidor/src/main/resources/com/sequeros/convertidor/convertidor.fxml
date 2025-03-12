@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sequeros.convertidor.ConvertidorController">
+   <children>
+      <Slider fx:id="slider" blockIncrement="0.1" max="2.0" showTickLabels="true" showTickMarks="true">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" top="30.0" />
+         </VBox.margin>
+      </Slider>
+      <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="325.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tasa de Conversión:">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="labelConversionRate" fill="BLUE" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" top="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="textTasaConversionAnonima" fill="GREEN" strokeType="OUTSIDE" strokeWidth="0.0" text="0,00">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" top="20.0" />
+               </HBox.margin>
+            </Text>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="325.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Entrada">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="textInput" text=" ">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="325.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salida   ">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="textOutput" editable="false" text=" ">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="63.0" prefWidth="325.0">
+         <children>
+            <Button fx:id="botonConvertir" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Convertir">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="botonClear" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Limpiar">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Line endX="200.2928924560547" endY="4.655122756958008E-5" startX="-100.0" stroke="#d3d3d3">
+         <VBox.margin>
+            <Insets left="10.0" right="10.0" />
+         </VBox.margin>
+      </Line>
+      <CheckBox fx:id="cbAutomatico" mnemonicParsing="false" onAction="#cbAutomaticoOnAction" text="Conversión Automática">
+         <VBox.margin>
+            <Insets left="20.0" top="20.0" />
+         </VBox.margin>
+      </CheckBox>
+   </children>
+</VBox>

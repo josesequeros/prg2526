@@ -1,0 +1,9 @@
+1;jose;ines;supersticion;10;jose
+2;jose;ines;calefaccion;10;ines
+3;ines;jose;automatismo;10;jose
+4;jose;carmen;azucar;10;jose
+5;jose;carmen;azucar;10;carmen
+6;inés;carmen;tonelero;10;carmen
+7;jose;pepe;incontrolado;10;pepe
+8;jose;pepe;soliloquio;10;jose
+9;jose;pepe;calendario;10;pepe
