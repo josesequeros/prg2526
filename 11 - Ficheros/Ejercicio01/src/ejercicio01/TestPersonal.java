@@ -60,6 +60,7 @@ public class TestPersonal {
                 System.out.println("0. Salir");;
                 System.out.println("1. Mostar gente de un pais determinado");
                 System.out.println("2. Borrar persona con su email");
+                System.out.println("3. Mostrar personal");
                 System.out.println("");
                 System.out.print("Selecciona el número de opción: ");
                 opcion = teclado.nextInt();
