@@ -13,6 +13,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import juegoahorcado.utilidades.EntradaCorrecta;
+import juegoahorcado.utilidades.Utilidades;
 
 /**
  *
@@ -92,6 +93,7 @@ public class JuegoAhorcado {
                     System.out.println("Objetivo: " + objetivo);
                     break;
                 case 4:
+                    Utilidades.mostrarArchivosEnDirectorio("./src/juegoahorcado/archivos/");
                     if (cambiarFicheroPalabras()) {
                         lo = new ListaPalabras(archivoPalabras);
                         //System.out.println(lo.getListaPalabras().size());
