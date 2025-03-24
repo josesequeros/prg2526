@@ -15,7 +15,7 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		Canvas canvas = new Canvas(900, 600);
+		Canvas canvas = new Canvas(900, 700);
 		
 		Pane root = new Pane(canvas);
 		

@@ -16,11 +16,11 @@ public class Examen2evEjercicio3a {
     public static void main(String[] args) {
         // TODO code application logic here
         // maximo 3 y 12 --> la n no puede ser mayor de 3
-        long n = ackerman(3, 12);
+        long n = ackerman(3, 2);
         System.out.println(n);
         System.out.println("");
         System.out.println(Integer.MAX_VALUE);
-        System.out.println(decimaABinario(Integer.MAX_VALUE));
+        System.out.println(decimaABinario(25));
     }
 
     private static long ackerman(long m, long n) {

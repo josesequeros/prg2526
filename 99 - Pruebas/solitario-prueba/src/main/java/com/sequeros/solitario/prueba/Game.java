@@ -1,4 +1,4 @@
-package com.sequeros.solitario.prueba;
+                                                                                                                                                                              package com.sequeros.solitario.prueba;
 
 import java.util.*;
 
@@ -221,7 +221,7 @@ class Game {
 	private void drawGame() {
 	    //Clear the game canvas
             System.out.println("drawGame");
-		gc.clearRect(0, 0, 900, 600);
+		gc.clearRect(0, 0, 900, 700);
 		
 		//Draw the hand
 		double x = PADDING, y = PADDING;

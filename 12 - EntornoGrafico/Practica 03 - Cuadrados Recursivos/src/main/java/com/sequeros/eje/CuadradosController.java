@@ -84,7 +84,7 @@ public class CuadradosController implements Initializable {
             botonPulsado();
         });
 
-        //dibujarEjes();
+        dibujarEjes();
     }
 
     private void dibujarEjes() {
