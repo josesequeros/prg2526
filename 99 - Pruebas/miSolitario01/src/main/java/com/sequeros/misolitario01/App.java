@@ -51,7 +51,7 @@ public class App extends Application {
 
         //setupDragAndDrop(card, pile);
         root.getChildren().add(card);
-
+/*
         card.setOnDragDetected(event -> {
             Dragboard db = card.startDragAndDrop(TransferMode.MOVE);
             ClipboardContent content = new ClipboardContent();
@@ -59,7 +59,7 @@ public class App extends Application {
             db.setContent(content);
             event.consume();
         });
-
+*/
 
         card.setOnDragDetected(event -> {
             Dragboard db = card.startDragAndDrop(TransferMode.MOVE);
