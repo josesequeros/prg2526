@@ -19,49 +19,49 @@ public class ControlCircle extends Application {
 
     private CirclePane circlePane = new CirclePane();
 
-    @Override // Override the start method in the Application class
+    @Override // Override el método start en la cñase Application
     public void start(Stage primaryStage) {
-        // Hold two buttons in an HBox
+        // Colocar dos botones en un HBox
         HBox hBox = new HBox();
         hBox.setSpacing(10);
         hBox.setAlignment(Pos.CENTER);
-        Button btEnlarge = new Button("Aumentar");
-        Button btShrink = new Button("Disminuir");
-        hBox.getChildren().add(btEnlarge);
-        hBox.getChildren().add(btShrink);
-        btEnlarge.setFocusTraversable(false);
-        btShrink.setFocusTraversable(false);
+        Button btAumentar = new Button("Aumentar");
+        Button btDisminuir = new Button("Disminuir");
+        hBox.getChildren().add(btAumentar);
+        hBox.getChildren().add(btDisminuir);
+        btAumentar.setFocusTraversable(false);
+        btDisminuir.setFocusTraversable(false);
 
-        // Create and register the handler
-        btEnlarge.setOnAction(new EnlargeHandler());
-        btShrink.setOnAction(new ShrinkHandler());
+        // Crear y registrar el manejador (handler)
+        btAumentar.setOnAction(new AumentarHandler());
+        btDisminuir.setOnAction(new DisminuirHandler());
         BorderPane borderPane = new BorderPane();
         borderPane.setCenter(circlePane);
         borderPane.setBottom(hBox);
         BorderPane.setAlignment(hBox, Pos.CENTER);
 
-        // Create a scene and place it in the stage
+        // Crear una scene y la colocamos en el stage
         Scene scene = new Scene(borderPane, 300, 200);
-        primaryStage.setTitle("Control de Circulo"); // Set the stage title
-        primaryStage.setScene(scene); // Place the scene in the stage
+        primaryStage.setTitle("Control de Circulo"); // Establecemos el título de la ventana (stage)
+        primaryStage.setScene(scene); // Situamos la escena (scene) en la ventana (stage)
         primaryStage.show(); // Display the stage
         circlePane.requestFocus();
 
         circlePane.setOnMouseClicked(e -> {
             if (e.getButton() == MouseButton.PRIMARY) {
-                circlePane.enlarge();
+                circlePane.aumentar();
             } else if (e.getButton() == MouseButton.SECONDARY) {
-                circlePane.shrink();
+                circlePane.disminuir();
             }
         });
 
         scene.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.UP) {
-                circlePane.enlarge();
+                circlePane.aumentar();
                 circlePane.requestFocus();
                 System.out.println("up");
             } else if (e.getCode() == KeyCode.DOWN) {
-                circlePane.shrink();
+                circlePane.disminuir();
                 circlePane.requestFocus();
                 System.out.println("down");
             }
@@ -69,25 +69,25 @@ public class ControlCircle extends Application {
 
     }
 
-    class EnlargeHandler implements EventHandler<ActionEvent> {
+    class AumentarHandler implements EventHandler<ActionEvent> {
 
-        @Override // Override the handle method
+        @Override // Sobreescribimos el método handle (manejador)
         public void handle(ActionEvent e) {
-            circlePane.enlarge();
+            circlePane.aumentar();
         }
     }
 
-    class ShrinkHandler implements EventHandler<ActionEvent> {
+    class DisminuirHandler implements EventHandler<ActionEvent> {
 
-        @Override // Override the handle method
+        @Override // Sobreescribimos el método handle (manejador)
         public void handle(ActionEvent e) {
-            circlePane.shrink();
+            circlePane.disminuir();
         }
     }
 
     /**
-     * The main method is only needed for the IDE with limited JavaFX support.
-     * Not needed for running from the command line.
+     * El método main sólo es necesario para el IDE con soporte limitado de JavaFX.
+     * No es necesario para ejecutar desde la línea de comandos.
      */
     public static void main(String[] args) {
         launch(args);
@@ -104,11 +104,11 @@ class CirclePane extends StackPane {
         circle.setFill(Color.WHITE);
     }
 
-    public void enlarge() {
+    public void aumentar() {
         circle.setRadius(circle.getRadius() + 2);
     }
 
-    public void shrink() {
+    public void disminuir() {
         circle.setRadius(circle.getRadius() > 2
                 ? circle.getRadius() - 2 : circle.getRadius() - 1);
     }

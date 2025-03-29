@@ -18,6 +18,8 @@ public class EventosRatonCrontroller implements Initializable {
     private double offsetX;
     private double offsetY;
 
+    private boolean arrastrandoMostrado = false;
+
     @FXML
     private void dragDetectado(MouseEvent event) {
         /*
@@ -33,17 +35,22 @@ public class EventosRatonCrontroller implements Initializable {
         //texto.setY(event.getY());
         //texto.setX(newX);
         //texto.setY(newY);
-*/
+         */
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         texto.setOnMouseDragged(e -> {
             double newX = e.getSceneX() + offsetX;
             double newY = e.getSceneY() + offsetY;
             //Coordenadas relativas al contenedor
             texto.setLayoutX(newX);
             texto.setLayoutY(newY);
+            if (!arrastrandoMostrado) {
+                System.out.println("Arrastrando");
+            }
+            arrastrandoMostrado = true;
         });
 
         texto.setOnMouseClicked(e -> {
@@ -55,13 +62,19 @@ public class EventosRatonCrontroller implements Initializable {
             if (e.getClickCount() == 2) {
                 System.out.println("Doble clic");
             }
+            arrastrandoMostrado = false;
+        });
+
+        texto.setOnMousePressed(e -> {
+            offsetX = texto.getLayoutX() - e.getSceneX();
+            offsetY = texto.getLayoutY() - e.getSceneY();
         });
     }
 
     @FXML
     private void handleMousePressed(MouseEvent event) {
-        offsetX = texto.getLayoutX() - event.getSceneX();
-        offsetY = texto.getLayoutY() - event.getSceneY();
+        //offsetX = texto.getLayoutX() - event.getSceneX();
+        //offsetY = texto.getLayoutY() - event.getSceneY();
     }
 
 }

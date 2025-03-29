@@ -19,6 +19,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("sumarRestar"), 640, 480);
         stage.setScene(scene);
+        stage.setTitle("Sumar o Restar");
         stage.show();
     }
 

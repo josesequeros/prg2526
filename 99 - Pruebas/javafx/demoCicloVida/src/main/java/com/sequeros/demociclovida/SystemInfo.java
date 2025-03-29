@@ -1,4 +1,4 @@
-package com.sequeros.controlcircle;
+package com.sequeros.demociclovida;
 
 public class SystemInfo {
 

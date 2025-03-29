@@ -58,6 +58,7 @@ public class SumarRestarController implements Initializable {
     @FXML
     private void checkboxRestaPulsar(ActionEvent event) {
         mensajeResta.setVisible(cbResta.isSelected());
+        botonSuma.setText(!cbResta.isSelected() ? "Suma" : "Resta");
     }
 
     @FXML
