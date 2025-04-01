@@ -24,11 +24,11 @@ public class App extends Application {
         clock.setCurrentTime();
         String timeString = clock.getHour() + ":" + clock.getMinute()
                 + ":" + clock.getSecond();
-
+        lblCurrentTime = new Label(timeString);
+        
         // Place clock and label in border pane
         BorderPane pane = new BorderPane();
-        pane.setCenter(clock);
-        lblCurrentTime = new Label(timeString);
+        pane.setCenter(clock);      
         pane.setBottom(lblCurrentTime);
         BorderPane.setAlignment(lblCurrentTime, Pos.TOP_CENTER);
 
@@ -39,7 +39,7 @@ public class App extends Application {
 
         // Create a scene and place it in the stage
         Scene scene = new Scene(pane, 250, 250);
-        primaryStage.setTitle("DisplayClock"); // Set the stage title
+        primaryStage.setTitle("Reloj"); // Set the stage title
         primaryStage.setScene(scene); // Place the scene in the stage
         primaryStage.show(); // Display the stage
     }
@@ -50,8 +50,6 @@ public class App extends Application {
     
     public static void actualizar() {
         clock.setCurrentTime();
-        String timeString = clock.getHour() + ":" + clock.getMinute()
-                + ":" + clock.getSecond();
         lblCurrentTime.setText(clock.getHour() + ":" + clock.getMinute() + ":" + clock.getSecond());
     }
     
