@@ -7,6 +7,11 @@ package com.sequeros.ejemplolistviewlenguajes;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+import javafx.util.Callback;
+
+import com.sequeros.ejemplolistviewlenguajes.vistaListaLenguajesController.LenguajeListCell;
+
 import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -91,7 +96,31 @@ public class vistaListaLenguajesController implements Initializable {
         // El botón Add (Añadir) solo estará habilitado cuando el TextField no esté vacío
         BAddfxID.disableProperty().bind(valorText.textProperty().isEmpty());
 
-        vistadeListafxID.setCellFactory(c -> new LenguajeListCell());
+        // Personalizar cada celda con una CellFactory
+        //vistadeListafxID.setCellFactory(c -> new LenguajeListCell());
+                
+        vistadeListafxID.setCellFactory(new Callback<ListView<Lenguaje>, ListCell<Lenguaje>>() {
+            @Override
+            public ListCell<Lenguaje> call(ListView<Lenguaje> listView) {
+                return new ListCell<Lenguaje>() {
+                    private ImageView view = new ImageView();
+                    @Override
+                    protected void updateItem(Lenguaje item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            setText(null);
+                            setGraphic(null);
+                        } else {
+                            view.setImage(item.getImagen());
+                            setGraphic(view);
+                            setText("\t"+item.getNombre());
+                            setTextFill(Color.BLUE); // Color del texto
+                            setFont(Font.font("Arial", 16)); // Fuente
+                        }
+                    }
+                };
+            }
+        });
 
     }
 

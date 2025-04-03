@@ -225,6 +225,8 @@ public class Practica02Ranking {
                     Integer valorAnterior = girlsMap.get(clave);
                     girlsMap.put(clave, valorAnterior + valor);
                 }
+                // otra forma
+                // girlsMap.put(clave, girlsMap.getOrDefault(clave, 0) + valor);
             }
             for (Persona boy : boys) {
                 String clave = boy.getNombre();
@@ -235,8 +237,11 @@ public class Practica02Ranking {
                     Integer valorAnterior = boysMap.get(clave);
                     boysMap.put(clave, valorAnterior + valor);
                 }
+                // otra forma
+                // girlsMap.put(clave, girlsMap.getOrDefault(clave, 0) + valor);
             }
         }
+        // visualizar el mapa
         //girlsMap.forEach((k, v) −> System.out.println(k + "\t" + v));
         //for (String key : girlsMap.keySet()) {
         //    System.out.println(key + "\t" + girlsMap.get(key));
@@ -253,6 +258,8 @@ public class Practica02Ranking {
                 return o2.getValue().compareTo(o1.getValue());
             }
         });
+        // Ordenar la lista con una expresión lambda
+        // listaChicas.sort((o1,o2)->o1.getValue().compareTo(o2.getValue()));
 
         LinkedHashMap<String, Integer> sortedMapChicas = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : listaChicas) {
@@ -280,6 +287,8 @@ public class Practica02Ranking {
                 return o2.getValue().compareTo(o1.getValue());
             }
         });
+        // Ordenar la lista con una expresión lambda
+        // listaChicos.sort((o1,o2)->o1.getValue().compareTo(o2.getValue()));
 
         LinkedHashMap<String, Integer> sortedMapChicos = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> entry : listaChicos) {
