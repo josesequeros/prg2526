@@ -21,8 +21,8 @@ public class EjemploFicheroTexto_ReemplazarTexto {
     public static void main(String[] args) throws FileNotFoundException {
         String origen = "origen.txt";
         String destino = "destino.txt";
-        String oldStr = "a";
-        String newStr = "e";
+        String oldStr = "que";
+        String newStr = "para";
 
         // Comprobar si existe el fichero fuente        
         File sourceFile = new File(origen);

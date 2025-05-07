@@ -18,15 +18,15 @@ public class App extends Application {
     private static RelojAnalogico clock = new RelojAnalogico();
     private static Label lblCurrentTime = new Label();
     
-    @Override // Override the start method in the Application class
+    @Override // Sobrescribir el método start en la clase Application
     public void start(Stage primaryStage) {
-        // Create a clock and a label
+        // Crear un reloj y una etiqueta
         clock.setCurrentTime();
-        String timeString = clock.getHour() + ":" + clock.getMinute()
-                + ":" + clock.getSecond();
+        String timeString = clock.getHora() + ":" + clock.getMinutos()
+                + ":" + clock.getSegundos();
         lblCurrentTime = new Label(timeString);
         
-        // Place clock and label in border pane
+        // Coloque el reloj y la etiqueta en border pane
         BorderPane pane = new BorderPane();
         pane.setCenter(clock);      
         pane.setBottom(lblCurrentTime);
@@ -37,11 +37,11 @@ public class App extends Application {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
-        // Create a scene and place it in the stage
+        // Crea una escena y colocarla en el escenario
         Scene scene = new Scene(pane, 250, 250);
-        primaryStage.setTitle("Reloj"); // Set the stage title
-        primaryStage.setScene(scene); // Place the scene in the stage
-        primaryStage.show(); // Display the stage
+        primaryStage.setTitle("Reloj"); // Set el título del escenario
+        primaryStage.setScene(scene); // Situar la escena en el escenario
+        primaryStage.show(); // Visualizar el escenario
     }
     
     public static void main(String[] args) {
@@ -50,7 +50,7 @@ public class App extends Application {
     
     public static void actualizar() {
         clock.setCurrentTime();
-        lblCurrentTime.setText(clock.getHour() + ":" + clock.getMinute() + ":" + clock.getSecond());
+        lblCurrentTime.setText(clock.getHora() + ":" + clock.getMinutos() + ":" + clock.getSegundos());
     }
     
 }

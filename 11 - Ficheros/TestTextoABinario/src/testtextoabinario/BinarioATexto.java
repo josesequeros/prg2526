@@ -35,6 +35,7 @@ public class BinarioATexto {
                 int number = in.readInt();
                 count++;
                 out.print(number);
+                out.print(" ");
                 if (count % 10 == 0) {
                     out.println();
                 }

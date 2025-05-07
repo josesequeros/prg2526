@@ -18,143 +18,161 @@ import javafx.scene.shape.Line;
  */
 public class RelojAnalogico extends Pane {
 
-    private int hour;
-    private int minute;
-    private int second;
+    private int hora;
+    private int minutos;
+    private int segundos;
 
     /**
-     * Construct a default clock with the current time
+     * Construir un reloj por defecto con la hora actual
      */
     public RelojAnalogico() {
         setCurrentTime();
     }
 
     /**
-     * Construct a clock with specified hour, minute, and second
+     * Construir un reloj con la hora, los minutos y los segundos especificados.d
      */
-    public RelojAnalogico(int hour, int minute, int second) {
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
+    public RelojAnalogico(int hour, int minutos, int segundos) {
+        this.hora = hour;
+        this.minutos = minutos;
+        this.segundos = segundos;
     }
 
     /**
-     * Return hour
+     * Return hora
      */
-    public int getHour() {
-        return hour;
+    public int getHora() {
+        return hora;
     }
 
     /**
-     * Set a new hour
+     * Set una nueva hora
      */
-    public void setHour(int hour) {
-        this.hour = hour;
-        paintClock();
+    public void setHora(int hora) {
+        this.hora = hora;
+        pintarReloj();
     }
 
     /**
      * Return minute
      */
-    public int getMinute() {
-        return minute;
+    public int getMinutos() {
+        return minutos;
     }
 
     /**
-     * Set a new minute
+     * Set un nuevo minuto
      */
-    public void setMinute(int minute) {
-        this.minute = minute;
-        paintClock();
+    public void setMinutos(int minutos) {
+        this.minutos = minutos;
+        pintarReloj();
     }
 
     /**
-     * Return second
+     * Return segundos
      */
-    public int getSecond() {
-        return second;
+    public int getSegundos() {
+        return segundos;
     }
 
     /**
-     * Set a new second
+     * Establecer un nuevo segundo
      */
-    public void setSecond(int second) {
-        this.second = second;
-        paintClock();
+    public void setSegundos(int segundos) {
+        this.segundos = segundos;
+        pintarReloj();
     }
 
-    /* Set the current time for the clock */
+    /* Ajustar la hora actual del reloj */
     public void setCurrentTime() {
-        // Construct a calendar for the current date and time
+        // Construir un calendario para la fecha y hora actuales
         Calendar calendar = new GregorianCalendar();
 
-        // Set current hour, minute and second
-        this.hour = calendar.get(Calendar.HOUR_OF_DAY);
-        this.minute = calendar.get(Calendar.MINUTE);
-        this.second = calendar.get(Calendar.SECOND);
+        // Ajustar la hora, los minutos y los segundos actuales
+        this.hora = calendar.get(Calendar.HOUR_OF_DAY);
+        this.minutos = calendar.get(Calendar.MINUTE);
+        this.segundos = calendar.get(Calendar.SECOND);
 
-        paintClock(); // Repaint the clock
+        pintarReloj(); // Repintar el reloj
     }
 
     /**
-     * Paint the clock
+     * Pintar el reloj
      */
-    private void paintClock() {
-        // Initialize clock parameters
-        double clockRadius
-                = Math.min(getWidth(), getHeight()) * 0.8 * 0.5;
+    private void pintarReloj() {
+        // Inicializar los parámetros del reloj
+        double radioReloj = Math.min(getWidth(), getHeight()) * 0.8 * 0.5;
         double centerX = getWidth() / 2;
         double centerY = getHeight() / 2;
 
-        // Draw circle
-        Circle circle = new Circle(centerX, centerY, clockRadius);
+        // Dibujar circulo
+        Circle circle = new Circle(centerX, centerY, radioReloj);
         circle.setFill(Color.WHITE);
         circle.setStroke(Color.BLACK);
-        Text t1 = new Text(centerX - 5, centerY - clockRadius + 12, "12");
-        Text t2 = new Text(centerX - clockRadius + 3, centerY + 5, "9");
-        Text t3 = new Text(centerX + clockRadius - 10, centerY + 3, "3");
-        Text t4 = new Text(centerX - 3, centerY + clockRadius - 3, "6");
+        Text t1 = new Text(centerX - 5, centerY - radioReloj + 12, "12");
+        Text t2 = new Text(centerX - radioReloj + 3, centerY + 5, "9");
+        Text t3 = new Text(centerX + radioReloj - 10, centerY + 3, "3");
+        Text t4 = new Text(centerX - 3, centerY + radioReloj - 3, "6");
 
-        // Draw second hand
-        double sLength = clockRadius * 0.8;
-        double secondX = centerX + sLength
-                * Math.sin(second * (2 * Math.PI / 60));
-        double secondY = centerY - sLength
-                * Math.cos(second * (2 * Math.PI / 60));
-        Line sLine = new Line(centerX, centerY, secondX, secondY);
-        sLine.setStroke(Color.RED);
+        // radianes = grados × π/180
+        // cada segundo son 360/60 = 6 grados
+        // radianes = 360/60 × π/180 = 2 x π / 60   
+        // siendo 60 la fracción de la circunferencia, una vuelta cada 60 segundos
+        // en el minutero igual, una vuelta (360 grados) cada 60 minutos
+        // en la hora, una vuelta cada 12 horas
 
-        // Draw minute hand
-        double mLength = clockRadius * 0.65;
-        double xMinute = centerX + mLength
-                * Math.sin(minute * (2 * Math.PI / 60));
-        double minuteY = centerY - mLength
-                * Math.cos(minute * (2 * Math.PI / 60));
-        Line mLine = new Line(centerX, centerY, xMinute, minuteY);
-        mLine.setStroke(Color.BLUE);
+        // Dibujar segundero
+        double longitudSegundero = radioReloj * 0.8;
+        double segundosX = centerX + longitudSegundero * Math.sin(segundos * (2 * Math.PI / 60));
+        double segundosY = centerY - longitudSegundero * Math.cos(segundos * (2 * Math.PI / 60));
+        Line segundosLinea = new Line(centerX, centerY, segundosX, segundosY);
+        segundosLinea.setStroke(Color.RED);
 
-        // Draw hour hand
-        double hLength = clockRadius * 0.5;
-        double hourX = centerX + hLength
-                * Math.sin((hour % 12 + minute / 60.0) * (2 * Math.PI / 12));
-        double hourY = centerY - hLength
-                * Math.cos((hour % 12 + minute / 60.0) * (2 * Math.PI / 12));
-        Line hLine = new Line(centerX, centerY, hourX, hourY);
-        hLine.setStroke(Color.GREEN);
+        // Dibujar el minutero
+        double longitudMinutero = radioReloj * 0.65;
+        double minutosX = centerX + longitudMinutero * Math.sin(minutos * (2 * Math.PI / 60));
+        double minutosY = centerY - longitudMinutero * Math.cos(minutos * (2 * Math.PI / 60));
+        Line minutosLinea = new Line(centerX, centerY, minutosX, minutosY);
+        minutosLinea.setStroke(Color.BLUE);
+
+        // Dibujar aguja horaria
+        double longitudHora = radioReloj * 0.5;
+        double horaX = centerX + longitudHora * Math.sin((hora % 12 + minutos / 60.0) * (2 * Math.PI / 12));
+        double horaY = centerY - longitudHora * Math.cos((hora % 12 + minutos / 60.0) * (2 * Math.PI / 12));
+        Line horaLinea = new Line(centerX, centerY, horaX, horaY);
+        horaLinea.setStroke(Color.GREEN);
 
         getChildren().clear();
-        getChildren().addAll(circle, t1, t2, t3, t4, sLine, mLine, hLine);
+        getChildren().addAll(circle, t1, t2, t3, t4, segundosLinea, minutosLinea, horaLinea);
+        /*
+        for (int i = 0; i < 12; i++) {
+            double angulo = 2 * Math.PI * i / 12;  // Convertir a radianes
+            double x = centerX + (radioReloj * 0.85) * Math.cos(angulo);
+            double y = centerY + (radioReloj * 0.85) * Math.sin(angulo);
+
+            Circle point = new Circle(x, y, 2, Color.BLUE);
+            getChildren().add(point);
+        }
+
+        for (int i = 0; i < 60; i++) {
+            double angulo = 2 * Math.PI * i / 60;  // Convertir a radianes
+            double x = centerX + (radioReloj * 0.85) * Math.cos(angulo);
+            double y = centerY + (radioReloj * 0.85) * Math.sin(angulo);
+            Text punto = new Text(x, y, ".");
+            getChildren().add(punto);
+        }
+        */
     }
 
     @Override
     public void setWidth(double width) {
         super.setWidth(width);
-        paintClock();
+        pintarReloj();
     }
 
     @Override
     public void setHeight(double height) {
         super.setHeight(height);
-        paintClock();
+        pintarReloj();
     }
 }

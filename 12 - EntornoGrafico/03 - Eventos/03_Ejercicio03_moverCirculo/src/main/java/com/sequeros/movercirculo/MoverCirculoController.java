@@ -65,7 +65,8 @@ public class MoverCirculoController implements Initializable {
         }
         
         //así lo pone en los apuntes, para mi es correcto aunque de el aviso
-        miGridPane.setRowIndex(circulo, fila);
+        //miGridPane.setRowIndex(circulo, fila);
+        GridPane.setRowIndex(circulo, fila);
         GridPane.setColumnIndex(circulo, columna); // así no da el aviso ¿?        
     }
 

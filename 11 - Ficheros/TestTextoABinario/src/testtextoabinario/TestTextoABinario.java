@@ -33,7 +33,7 @@ public class TestTextoABinario {
         String binaryFile = input.next();
         
         TextoABinario.crearFicheroBinario(textFile, binaryFile);
-         */
+         
         try (PrintWriter output = new PrintWriter(textFile)) {
             for (int i = 1000000; i < 10000000; i++) {
                 if (esPrimo(i)) {
@@ -47,6 +47,7 @@ public class TestTextoABinario {
                 }
             }
         }
+        */
         System.out.println("Total: " + cont);
         // Comprobar si existe el fichero         
         File sourceFile = new File(textFile);
@@ -56,7 +57,7 @@ public class TestTextoABinario {
         } else {
             TextoABinario.crearFicheroBinario("primos.txt", "primos.bin");
         }
-        
+        BinarioATexto.makeTextFile("primos2.txt", "primos.bin");
 
     }
 

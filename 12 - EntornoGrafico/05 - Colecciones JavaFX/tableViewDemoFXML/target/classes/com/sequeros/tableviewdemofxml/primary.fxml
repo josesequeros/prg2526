@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sequeros.tableviewdemofxml.PrimaryController">
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="country" minWidth="100.0" prefWidth="75.0" text="País" />
+                <TableColumn fx:id="capital" minWidth="100.0" prefWidth="75.0" text="Capital" />
+                  <TableColumn fx:id="population" minWidth="200.0" prefWidth="75.0" text="Población" />
+                  <TableColumn fx:id="democratic" minWidth="200.0" prefWidth="75.0" text="Democrático" />
+              </columns>
+            </TableView>
+         </children>
+      </StackPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="TableViewDemo con FXML" />
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
