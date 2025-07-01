@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="234.0" prefWidth="406.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.mycompany.buscaminas.JugadorNuevoController">
+   <children>
+      <Pane prefHeight="234.0" prefWidth="406.0">
+         <children>
+            <Text layoutX="70.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre: " />
+            <TextField fx:id="nombretxt" layoutX="170.0" layoutY="66.0" onAction="#newname" prefHeight="25.0" prefWidth="163.0" />
+            <TextField fx:id="imagentxt" layoutX="170.0" layoutY="120.0" onAction="#newimage" prefHeight="25.0" prefWidth="163.0" />
+            <Text layoutX="72.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Imagen:" />
+            <Button fx:id="clearbttn" layoutX="72.0" layoutY="188.0" mnemonicParsing="false" onAction="#clear" prefHeight="25.0" prefWidth="59.0" text="Limpiar" />
+            <Button fx:id="savebttn" layoutX="174.0" layoutY="188.0" mnemonicParsing="false" onAction="#save" text="Guardar" />
+            <Button fx:id="exitbttn" layoutX="275.0" layoutY="188.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="59.0" text="Salir" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

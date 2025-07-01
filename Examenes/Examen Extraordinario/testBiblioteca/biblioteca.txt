@@ -1,0 +1,5 @@
+Dune,Frank Herbert,1965,123-456,dune.jpg,duneC.jpg,Saga galáctica,Ciencia ficción
+Dune,Frank Herbert,1965,123-457,dune.jpg,duneC.jpg,Saga galáctica,Ciencia ficción
+Dune,Frank Herbert,1965,123-458,dune.jpg,duneC.jpg,Saga galáctica,Ciencia ficción
+Dune,Frank Herbert,1965,123-459,dune.jpg,duneC.jpg,Saga galáctica,Ciencia ficción
+1984,George Orwell,1949,987-654,1984.jpg,1984.jpg,Distopía política,Distopía
