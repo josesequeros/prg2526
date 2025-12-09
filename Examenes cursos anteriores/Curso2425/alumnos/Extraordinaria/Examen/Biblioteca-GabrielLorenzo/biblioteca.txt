@@ -1,0 +1,2 @@
+a;a;1950;a;a;mario.png;a
+1;a;2000;b;mario.png;a;a

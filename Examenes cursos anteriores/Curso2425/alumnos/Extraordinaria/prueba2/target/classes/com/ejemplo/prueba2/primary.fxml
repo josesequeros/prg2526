@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="999.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ejemplo.prueba2.PrimaryController">
+   <children>
+      <Button fx:id="BTanyadir" layoutX="555.0" layoutY="324.0" onAction="#anyadir" prefHeight="25.0" prefWidth="111.0" text="añadir" />
+      <TableView fx:id="modelo" layoutX="28.0" layoutY="41.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="234.0" prefWidth="605.0">
+        <columns>
+          <TableColumn fx:id="TVtitulo" onEditStart="#anyadir" prefWidth="75.0" text="titulo" />
+          <TableColumn fx:id="TVautor" onEditStart="#anyadir" prefWidth="75.0" text="autor" />
+            <TableColumn fx:id="TVpublicacion" onEditStart="#anyadir" prefWidth="75.0" text="publicacion" />
+            <TableColumn fx:id="TVisbn" onEditStart="#anyadir" prefWidth="103.19996643066406" text="ISBN" />
+            <TableColumn fx:id="TVimg" onEditStart="#anyadir" prefWidth="237.60003662109375" text="img" />
+        </columns>
+      </TableView>
+      <Button fx:id="BTborrar" layoutX="857.0" layoutY="327.0" mnemonicParsing="false" onAction="#borrar" prefHeight="25.0" prefWidth="111.0" text="borrar" />
+      <Button fx:id="BTmodificar" layoutX="697.0" layoutY="324.0" mnemonicParsing="false" onAction="#modificar" prefHeight="25.0" prefWidth="128.0" text="Modificar" />
+      <TextField fx:id="TFtitulo" layoutX="676.0" layoutY="35.0" promptText="titulo" />
+      <TextField fx:id="TFpublicacion" layoutX="697.0" layoutY="124.0" promptText="publicacion" />
+      <TextField fx:id="TFautor" layoutX="686.0" layoutY="85.0" promptText="autor" />
+      <TextField fx:id="TFimg" layoutX="697.0" layoutY="224.0" promptText="imagen" />
+      <TextField fx:id="TFISBN" layoutX="707.0" layoutY="174.0" promptText="ISBN" />
+   </children>
+</AnchorPane>
