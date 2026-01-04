@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejemplo05;
+package ejemplo03;
 
 /**
  *
@@ -11,36 +11,19 @@ package ejemplo05;
 public class Articulo {
 
     // Atributos de la Clase
-    final String identificador;
     private String cod;
     private String titulo;
     private String formato;
     private float precio_alquiler;
 
-    public static final double IVA = 0.21;
-    private static int numero = 0;
-
     // Métodos de la Clase
-    // Constructor 
-    public Articulo(String identificador, String cod, String titulo, String formato, float precio_alquiler) {
-        this.identificador = identificador;
+    public void modificaValores(String cod, String titulo, String formato, float precio_alquiler) {
         this.cod = cod;
         this.titulo = titulo;
         this.formato = formato;
         this.precio_alquiler = precio_alquiler;
-        this.numero++;
     }
-
-    @Override
-    public String toString() {
-        return "Articulo{" + "identificador=" + identificador + ", cod=" + cod + ", titulo=" + titulo + ", formato=" + formato + ", precio_alquiler=" + precio_alquiler + '}';
-    }
-
-    public void setIdentificador(String id) {
-        // NO podemos modificar un final
-        //   this.identificador = id;
-    }
-
+    
     float precio1() {
         return getPrecio_alquiler();
     }
@@ -114,7 +97,4 @@ public class Articulo {
         this.precio_alquiler = precio_alquiler;
     }
 
-    public static int getNumero() {
-        return numero;
-    }
 }

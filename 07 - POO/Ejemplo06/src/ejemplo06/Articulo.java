@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejemplo05;
+package ejemplo06;
 
 /**
  *
@@ -36,9 +36,10 @@ public class Articulo {
         return "Articulo{" + "identificador=" + identificador + ", cod=" + cod + ", titulo=" + titulo + ", formato=" + formato + ", precio_alquiler=" + precio_alquiler + '}';
     }
 
+
     public void setIdentificador(String id) {
         // NO podemos modificar un final
-        //   this.identificador = id;
+     //   this.identificador = id;
     }
 
     float precio1() {
@@ -117,4 +118,5 @@ public class Articulo {
     public static int getNumero() {
         return numero;
     }
+
 }
