@@ -20,7 +20,7 @@ public class Baraja {
     public Baraja(ArrayList<Carta> baraja) {
         this.baraja = baraja;
     }
-    
+
     /*
     public Baraja() {
         //String[] palosNombre = new String[]{"Oros", "Copas", "Espadas", "Bastos"};
@@ -39,14 +39,13 @@ public class Baraja {
             }
         }
     }
-    */
-    
+     */
     public Baraja() {
         //String[] palosNombre = new String[]{"Oros", "Copas", "Espadas", "Bastos"};
         //int numeros[] = {1, 2, 3, 4, 5, 6, 7, 10, 11, 12};
         this.baraja = new ArrayList<Carta>(40);
         for (Palos palo : Palos.values()) {
-            for(NombreCarta nombre : NombreCarta.values()) {
+            for (NombreCarta nombre : NombreCarta.values()) {
                 Carta carta = new Carta();
                 //baraja[k] = new Carta();
                 carta.setPalo(palo);
@@ -57,19 +56,20 @@ public class Baraja {
             }
         }
     }
-        
+
     @Override
     public String toString() {
         String cad = "";
-        for (int i = 0; i < 40; i++) {
-            cad += baraja.get(i).toString() + "\n";
+        for (int i = 0; i < baraja.size(); i++) {
+            //System.out.println(baraja.get(i).getValor());
+            cad += "\t" + (i + 1) + " " + baraja.get(i).toString() + "\n";
         }
-        return "Baraja{" + "baraja=" + "\n" + cad + '}';
+        return "Baraja{" + "\n" + cad + '}';
     }
 
     public void barajar() {
         //shuffle(this.baraja); // Para Arrays
-        
+
         Collections.shuffle(baraja);
         /*
         Carta[] barajaArray = this.baraja.toArray(new Carta[0]);
@@ -78,7 +78,7 @@ public class Baraja {
         for (Carta carta : barajaArray) {
             this.baraja.add(carta);
         }
-        */
+         */
     }
 
     // genéricos en java
@@ -95,5 +95,11 @@ public class Baraja {
         for (int j : random.ints(array.length, 0, array.length).toArray()) {
             swap(array, i++, j);
         }
+    }
+
+    public Carta extraerCarta() {
+        Carta c = this.baraja.get(0);
+        this.baraja.remove(0);
+        return c;
     }
 }

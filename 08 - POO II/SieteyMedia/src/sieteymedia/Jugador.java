@@ -16,12 +16,14 @@ public class Jugador {
     private int saldo;
     private ArrayList<CartaJugada> mano;
     private int oculta;
+    private Estado estado;
 
     public Jugador(String nombre, int saldo) {
         this.nombre = nombre;
         this.saldo = saldo;
         this.mano = new ArrayList<CartaJugada>();
         this.oculta = -1;
+        this.estado = Estado.JUGANDO;
     }
 
     public String getNombre() {
@@ -56,6 +58,14 @@ public class Jugador {
         this.oculta = oculta;
     }
 
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
     @Override
     public String toString() {
         String cad = "";
@@ -66,20 +76,20 @@ public class Jugador {
                 cad += mano.get(i).toString() + "\n";
             }
         }
-        return "Jugador{" + "nombre=" + nombre + ", saldo=" + saldo + ", mano=" + cad + ", oculta=" + oculta + '}';
+        return cad;//"Jugador{" + "nombre=" + nombre + ", saldo=" + saldo + ", mano=" + cad + ", oculta=" + oculta + '}';
     }
 
     public String mostrarMano() {
         String cad = "";
         for (int i = 0; i < mano.size(); i++) {
             if (mano.get(i).isOculta()) {
-            //if (oculta > 0 && oculta == i) {
-                cad += "Boca Abajo" + mano.get(i).toString()+"\n";
+                //if (oculta > 0 && oculta == i) {
+                cad += "Boca Abajo" + mano.get(i).toString() + "\n";
             } else {
                 cad += mano.get(i).toString() + "\n";
             }
         }
-        return "Jugador{" + "nombre=" + nombre + ", saldo=" + saldo + ", mano=" + cad + ", oculta=" + oculta + '}';
+        return cad;//"Jugador{" + "nombre=" + nombre + ", saldo=" + saldo + ", mano=" + cad + ", oculta=" + oculta + '}';
     }
 
     public float obtenerPuntuacion() {
@@ -90,4 +100,13 @@ public class Jugador {
         return total;
     }
 
+    public CartaJugada extraerCartaJugada(int i) {
+        return this.mano.get(i);
+    }
+
+    public void destaparCartas() {
+        for (int i = 0; i < mano.size(); i++) {
+            mano.get(i).setOculta(false);
+        }
+    }
 }

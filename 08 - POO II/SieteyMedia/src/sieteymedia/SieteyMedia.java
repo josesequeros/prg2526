@@ -15,18 +15,33 @@ public class SieteyMedia {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Jugador jugador1 = new Jugador("Jugador 1", 1000);
+        Jugador jugador2 = new Jugador("Jugador 2", 2000);
+        Jugador jugador3 = new Jugador("Jugador 3", 12000);
+        
+        Juego partida = new Juego();
+        partida.addJugador(jugador1);
+        partida.addJugador(jugador2);
+        partida.setApuesta(100);
+        partida.setBanca(jugador3);
+        
+        
         Baraja baraja = new Baraja();
-        System.out.println(baraja);
+        //System.out.println(baraja);
         int veces = (int) (Math.random() * 10) + 1;
-        System.out.println(veces);
+        //System.out.println(veces);
         for (int i = 0; i < veces; i++) {
             baraja.barajar();
         }
-        System.out.println(baraja);
         
-        for (Palos palo : Palos.values()) {
-            System.out.println(palo.name());
-        }
+        
+        partida.setBaraja(baraja);
+        partida.mostrarJuego();
+        
+        partida.play();
+        partida.mostrarJuego();
+        //System.out.println(baraja);
     }
 
 }

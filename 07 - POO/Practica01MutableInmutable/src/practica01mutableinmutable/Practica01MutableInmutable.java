@@ -28,7 +28,7 @@ public class Practica01MutableInmutable {
             char nextLetra = (char) (posicion + 'A'); // position+'A' es el código ASCII de la letra siguiente
             letras.append(nextLetra); // añade la nueva letra
         }
-        if (letras.indexOf(OBJETIVO, letras.length() - 4) >= 0) // si letras acaba con "LEAR"
+        if (letras.indexOf(OBJETIVO, letras.length() - 4) >= 0) // si letras acaba con "AZAR"
         {
             System.out.println("Ha tomado " + letras.length() + " caracteres para generar " + OBJETIVO);
         } else {
@@ -49,7 +49,7 @@ public class Practica01MutableInmutable {
             char nextLetra = (char) (posicion + 'A'); // position+'A' es el código ASCII de la letra siguiente
             letras2 += nextLetra; // añade la nueva letra
         }
-        if (letras2.substring(letras2.length()- 4).equals(OBJETIVO)) // si letras acaba con "LEAR"
+        if (letras2.substring(letras2.length()- 4).equals(OBJETIVO)) // si letras acaba con "AZAR"
         {
             System.out.println("Ha tomado " + letras2.length() + " caracteres para generar " + OBJETIVO);
         } else {
