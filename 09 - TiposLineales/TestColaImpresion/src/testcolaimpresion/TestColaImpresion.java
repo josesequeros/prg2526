@@ -4,6 +4,9 @@
  */
 package testcolaimpresion;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
+
 /**
  *
  * @author ja.buenoseva
@@ -15,6 +18,15 @@ public class TestColaImpresion {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
+        
+        ColaImpresion colaImpresion = new ColaImpresion();
+        colaImpresion.addImpresora(new Impresora("A"));
+        colaImpresion.addImpresora(new Impresora("B"));
+        colaImpresion.addImpresora(new Impresora("C"));
+        colaImpresion.encender();
     }
-    
+
+
+
 }
