@@ -65,7 +65,7 @@ premáticas destos nuestros reinos. Y mandamos a los del nuestro Consejo, y
 a otras cualesquier justicias dellos, guarden y cumplan esta nuestra cédula
 y lo en ella contenido. Fecha en Valladolid, a veinte y seis días del mes
 de setiembre de mil y seiscientos y cuatro años.""";
-        // Create a TreeMap to hold words as key and count as value
+        // Crea un TreeMap con palabras como key y las ocurrencias como value
         Map<String, Integer> map = new TreeMap<>();
 
         String[] words = text.split("[\\s+\\p{P}]");
@@ -83,7 +83,24 @@ de setiembre de mil y seiscientos y cuatro años.""";
             }
         }
 
-        // Display key and value for each entry
+        // Visualiza clave y valor para cada entrada
         map.forEach((k, v) -> System.out.println(k + "\t" + v));
     }
 }
+
+/*
+El patrón "[\\s+\\p{P}]" es una clase de caracteres que contiene:
+
+\\s → cualquier carácter de espacio en blanco
+(espacio, tabulación, salto de línea, etc.)
++ → el carácter literal signo más (+)
+\\p{P} → cualquier signo de puntuación unicode
+(., ; : ! ? ‘ ” ( ) { } [ ] / - etc.)
+
+Es decir: la expresión divide el texto cada vez que encuentra cualquier espacio, 
+cualquier signo de puntuación o un símbolo +.
+
+El + aquí NO significa “uno o más”
+Porque está dentro de corchetes, y dentro de [] pierde su significado de cuantificador.
+En cambio, se interpreta literalmente como un carácter más de la lista.
+*/
