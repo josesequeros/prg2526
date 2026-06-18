@@ -1,0 +1,5 @@
+com\mycompany\personas\Persona.class
+module-info.class
+com\mycompany\personas\PrimaryController.class
+com\mycompany\personas\SecondaryController.class
+com\mycompany\personas\App.class

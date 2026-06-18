@@ -1,0 +1,9 @@
+com\mycompany\ejemplotableviewbd\ListaPersonas.class
+com\mycompany\ejemplotableviewbd\App.class
+com\mycompany\ejemplotableviewbd\TableViewController.class
+com\mycompany\ejemplotableviewbd\Auxiliar.class
+com\mycompany\ejemplotableviewbd\TableViewController$BanderaImagenCell.class
+com\mycompany\ejemplotableviewbd\TableViewController$PersonaImagenCell.class
+com\mycompany\ejemplotableviewbd\Persona.class
+module-info.class
+com\mycompany\ejemplotableviewbd\Db.class

@@ -1,0 +1,7 @@
+com\mycompany\pruebas\App.class
+com\mycompany\pruebas\Persona.class
+com\mycompany\pruebas\DatosPersonaControlador.class
+com\mycompany\pruebas\VerDatosPersonaControlador.class
+module-info.class
+com\mycompany\pruebas\VistaListaControlador$PersonaListCell.class
+com\mycompany\pruebas\VistaListaControlador.class

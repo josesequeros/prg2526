@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="477.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sequeros.jgpexamenordinarioej7.PersonasPaisControlador">
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="477.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="selectedItem">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Personas del Mismo País">
+               <padding>
+                  <Insets left="30.0" right="20.0" />
+               </padding>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="vistaTabla" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colGenero" editable="false" prefWidth="75.0" text="Genero" />
+          <TableColumn fx:id="colNombre" editable="false" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="colApellidos" editable="false" prefWidth="75.0" text="Apellidos" />
+            <TableColumn fx:id="colCorreo" editable="false" prefWidth="75.0" text="Correo" />
+            <TableColumn fx:id="colImagen" editable="false" prefWidth="75.0" text="Imagen" />
+        </columns>
+      </TableView>
+   </center>
+   <right>
+      <VBox prefHeight="468.0" prefWidth="25.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <VBox prefHeight="468.0" prefWidth="25.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>

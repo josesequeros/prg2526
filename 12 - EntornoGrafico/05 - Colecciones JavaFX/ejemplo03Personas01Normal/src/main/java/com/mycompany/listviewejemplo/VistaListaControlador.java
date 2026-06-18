@@ -65,11 +65,11 @@ public class VistaListaControlador implements Initializable {
         misdatos.add(new Persona("María", "Pérez"));
         //ObservableList<Persona>
         datos = FXCollections.observableArrayList(
-                        new Persona("Jacob", "Smith"),
-                        new Persona("Isabella", "Johnson"),
-                        new Persona("Ethan", "Williams"),
-                        new Persona("Emma", "Jones"),
-                        new Persona("Michael", "Brown"));
+                new Persona("Jacob", "Smith"),
+                new Persona("Isabella", "Johnson"),
+                new Persona("Ethan", "Williams"),
+                new Persona("Emma", "Jones"),
+                new Persona("Michael", "Brown"));
         //datos = FXCollections.observableArrayList(misdatos);
 
         vistadeListafxID.setItems(datos); // vinculación entre la vista y el modelo
@@ -84,12 +84,13 @@ public class VistaListaControlador implements Initializable {
                 // TODO Auto-generated method stub
                 if (textFieldfxID.isFocused()) {
                     BAddfxID.setDisable(false);
-                    BBorrarfxID.setDisable(true);
+                    //BBorrarfxID.setDisable(true);
                 }
             }
         });
 
         // oyente de foco para el listView
+        /*
         vistadeListafxID.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue,
@@ -100,9 +101,18 @@ public class VistaListaControlador implements Initializable {
                 }
 
             }
-
         });
-
+         */
+        
+        vistadeListafxID.getSelectionModel().selectedItemProperty()
+                .addListener((observable, oldValue, newValue) -> {
+                    // BBorrarfxID.setDisable(newValue == null);    // equivale al if else siguiente
+                    if (newValue != null) {
+                        BBorrarfxID.setDisable(false); // activar botón
+                    } else {
+                        BBorrarfxID.setDisable(true);  // desactivar botón
+                    }
+                });
     }
 
 }

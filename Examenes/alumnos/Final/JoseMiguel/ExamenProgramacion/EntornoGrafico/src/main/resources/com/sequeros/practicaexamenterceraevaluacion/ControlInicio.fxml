@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sequeros.practicaexamenterceraevaluacion.ControlInicioController">
+
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="Archivo">
+                    <MenuItem fx:id="menuExit" onAction="#handleSalir" text="Salir" />
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="ExitMenuGuart" onAction="#handleSalirGrabando" text="Salir Grabando" />
+                </Menu>
+                <Menu text="Opciones">
+                    <MenuItem fx:id="menuAnyadir" onAction="#handleAnyadir" text="Añadir" />
+                    <MenuItem fx:id="menuModificar" onAction="#handleModificar" text="Modificar" />
+                    <MenuItem fx:id="menuBorrar" onAction="#handleBorrar" text="Borrar" />
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <Button fx:id="addButton" onAction="#handleAnyadir" text="Añadir" />
+                <Button fx:id="delButton" onAction="#handleBorrar" text="Borrar" />
+                <Button fx:id="salirGrabandoButton" onAction="#handleSalirGrabando" text="Salir Grabando" />
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10.0">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+
+            <!-- Tabla -->
+            <TableView fx:id="tableGeneral" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="nameColum" prefWidth="100" text="Nombre" />
+                    <TableColumn fx:id="subColum" prefWidth="140" text="Apellidos" />
+                    <TableColumn fx:id="dateColum" prefWidth="100" text="Nacimiento" />
+                    <!-- generoColum: muestra man.png si H, woman.png si M -->
+                    <TableColumn fx:id="generoColum" prefWidth="80" text="Género" />
+                    <TableColumn fx:id="paisColum" prefWidth="100" text="País" />
+                    <TableColumn fx:id="bandColum" prefWidth="90" text="Bandera" />
+               <TableColumn fx:id="emailColum" prefWidth="75.0" text="Email" />
+                </columns>
+                <placeholder>
+                    <Label text="Tabla sin contenido" />
+                </placeholder>
+            </TableView>
+
+            <!-- Formulario de detalle -->
+            <!-- GridPane: col 0-1 = campos izquierda  /  col 2-3 = bandera preview -->
+            <GridPane hgap="10.0" vgap="8.0">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="80.0" />
+                    <ColumnConstraints hgrow="ALWAYS" prefWidth="200.0" />
+                    <ColumnConstraints minWidth="70.0" />
+                    <ColumnConstraints hgrow="ALWAYS" prefWidth="200.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="30.0" />  <!-- 0: DNI / etiqueta Bandera -->
+                    <RowConstraints minHeight="30.0" />  <!-- 1: Nombre / bandPreview -->
+                    <RowConstraints minHeight="30.0" />  <!-- 2: Apellidos -->
+                    <RowConstraints minHeight="30.0" />  <!-- 3: Nacimiento -->
+                    <RowConstraints minHeight="30.0" />  <!-- 4: Género -->
+                    <RowConstraints minHeight="30.0" />  <!-- 5: País -->
+                    <RowConstraints vgrow="ALWAYS" />    <!-- 6: espacio -->
+                    <RowConstraints minHeight="35.0" />  <!-- 7: botones -->
+                </rowConstraints>
+
+                <!-- Bandera (label col 2 fila 0, preview col 3 filas 1-4) -->
+                <Label text="Bandera" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <ImageView fx:id="bandPreview" fitHeight="120.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.rowSpan="4" />
+
+                <!-- Nombre -->
+                <Label text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <!-- Apellidos -->
+                <Label text="Apellidos" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="subField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <!-- Nacimiento -->
+                <Label text="Nacimiento" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="dateField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <!-- Género -->
+                <Label text="Género" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="generoField" promptText="H / M" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <!-- País -->
+                <Label text="País" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="paisField" promptText="Spain, China, Canada..." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                <!-- Botones Modificar / Aplicar / Cancelar -->
+                <HBox alignment="CENTER_LEFT" spacing="8.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                    <Button fx:id="modificarButton" onAction="#handleModificar" text="Modificar" />
+                    <Button fx:id="aplicarButton" onAction="#handleAplicar" text="Aplicar" visible="false" />
+                    <Button fx:id="cancelarButton" onAction="#handleCancelar" text="Cancelar" visible="false" />
+                </HBox>
+            <Label text="Email" />
+            <TextField fx:id="emailField" GridPane.columnIndex="1" />
+
+            </GridPane>
+        </VBox>
+    </center>
+
+</BorderPane>
