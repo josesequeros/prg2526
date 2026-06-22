@@ -1,0 +1,11 @@
+com\sequeros\comicteca\ComicInterfaz.class
+com\sequeros\comicteca\Comicteca.class
+module-info.class
+com\sequeros\comicteca\Auxiliar.class
+com\sequeros\comicteca\App.class
+com\sequeros\comicteca\ComicSuperheroes.class
+com\sequeros\comicteca\PrincipalController$ComicListCell.class
+com\sequeros\comicteca\ComicEuropeo.class
+com\sequeros\comicteca\ComicAbstracta.class
+com\sequeros\comicteca\PrincipalController.class
+com\sequeros\comicteca\DatosComicController.class
